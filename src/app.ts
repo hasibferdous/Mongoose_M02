@@ -61,7 +61,7 @@ const userSchema = new Schema<IUser>({
     },
 
     name: { 
-        fastName:{
+        firstName:{
             type: String, 
             required: true 
         },
@@ -98,15 +98,15 @@ const userSchema = new Schema<IUser>({
         }, 
   });
 
-  const User = model<IUser>("User", userSchema)
+ const User = model<IUser>("User", userSchema)
 
  const createUserToDB=async ()=>{
     const user = new User({
-        id: '567',
+        id: '237',
         role:"student",
         password: "hjhgf",
         name: {
-            firstName: 'Hasib',
+            firstName: 'Hasibul',
             lastName: 'Ferdous',    
         },
         
@@ -118,6 +118,7 @@ const userSchema = new Schema<IUser>({
         permanentAddress:'UK' 
     });
       await user.save();
+      console.log(user);
  }
 
  createUserToDB();
